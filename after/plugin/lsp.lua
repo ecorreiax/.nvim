@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {'tsserver', 'gopls'},
+	ensure_installed = {'tsserver', 'gopls', 'rubocop'},
 	handlers = {
 		lsp_zero.default_setup,
 		lua_ls = function()
@@ -30,6 +30,8 @@ require('mason-lspconfig').setup({
 local cmp = require('cmp')
 local luasnip = require 'luasnip'
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
+
+require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
 	snippet = {
