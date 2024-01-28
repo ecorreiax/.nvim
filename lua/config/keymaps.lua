@@ -2,16 +2,21 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
+vim.keymap.set("n", "<leader>w", ":w<cr>")
+vim.keymap.set("n", "<leader>q", ":q<cr>")
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+
+vim.keymap.set("n", "<leader>>", "V`]<")
+vim.keymap.set("n", "<leader><", "V`]>")
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<BS>", "<C-o>")
-
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -19,6 +24,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set('n', '<leader>sj', [[:GoTagAdd json<CR>]])
+vim.keymap.set('n', '<leader>ie', [[:GoIfErr<CR>]])
 
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set({"n", "v"}, "<leader>Y", [["+Y]])
@@ -26,9 +33,11 @@ vim.keymap.set({"n", "v"}, "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>bp", vim.cmd.bprev)
 vim.keymap.set("n", "<leader>bn", vim.cmd.bnext)
 vim.keymap.set("n", "<leader>bd", vim.cmd.bd)
+vim.keymap.set("n", "<Tab>", ":b#<CR>")
+
+vim.keymap.set('n', '<leader>dw', ':%s/\\s*$//<CR>:nohl<CR>', { silent = true })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-    group = LspConfigGroup,
     callback = function(e)
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
