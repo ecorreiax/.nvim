@@ -1,11 +1,9 @@
 return {
     {
-        'ribru17/bamboo.nvim',
-        lazy = false,
-        priority = 1000,
+        'Mofiqul/vscode.nvim',
         config = function()
-            require('bamboo').setup {}
-            require('bamboo').load()
+            require('vscode').setup({})
+            require('vscode').load()
         end,
     }
 }
