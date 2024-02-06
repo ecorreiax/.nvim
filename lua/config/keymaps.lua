@@ -5,6 +5,15 @@ vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", ":w<cr>")
 vim.keymap.set("n", "<leader>q", ":q<cr>")
 
+vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<CR>")
+vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>")
+vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>")
+vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<CR>")
+
+vim.keymap.set("n", "<leader>sv", "<cmd>vsp<CR>")
+vim.keymap.set("n", "<leader>sh", "<cmd>sp<CR>")
+vim.keymap.set("n", "<leader>sc", "<cmd>close<CR>")
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
