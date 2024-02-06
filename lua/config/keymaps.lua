@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader><", "V`]>")
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "<BS>", "<C-o>")
+vim.keymap.set("n", "<leader><BS>", "<C-o>")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
