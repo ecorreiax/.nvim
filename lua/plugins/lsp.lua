@@ -38,7 +38,7 @@ return {
 					end, opts)
 				end,
 			})
-
+			
 			vim.api.nvim_create_autocmd("LspDetach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
 				callback = function(event)
@@ -46,10 +46,7 @@ return {
 					vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event.buf })
 				end,
 			})
-
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
+			
 			local servers = {
 				gopls = {},
 				stylua = {},
@@ -58,7 +55,7 @@ return {
 				rubocop = {},
 				emmet_language_server = {},
 				tailwindcss = {},
-
+			
 				lua_ls = {
 					settings = {
 						Lua = {
@@ -73,20 +70,19 @@ return {
 					},
 				},
 			}
-
+			
 			require("mason").setup()
-
+			
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-
+			
 			require("mason-lspconfig").setup({
 				handlers = {
 					function(server_name)
 						local server = servers[server_name] or {}
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},

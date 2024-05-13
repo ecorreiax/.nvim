@@ -4,7 +4,7 @@ return {
 		lazy = false,
 		keys = {
 			{
-				"<leader>f",
+				"<leader>fc",
 				function()
 					require("conform").format({ async = true, lsp_fallback = true })
 				end,
@@ -22,6 +22,7 @@ return {
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
+				go = { "gopls" },
 			},
 		},
 	},

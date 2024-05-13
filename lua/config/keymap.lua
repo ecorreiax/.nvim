@@ -1,11 +1,11 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 vim.keymap.set("n", "<leader>e", function()
-	if vim.bo.filetype == "netrw" then
-		vim.cmd("bunload")
-	else
-		vim.cmd.Ex()
-	end
+  if vim.bo.filetype == "netrw" then
+    vim.cmd "bunload"
+  else
+    vim.cmd.Ex()
+  end
 end)
 
 vim.keymap.set("n", "<leader>w", ":w<cr>")
@@ -26,7 +26,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.keymap.set("n", "<leader>bp", vim.cmd.bprev)
+vim.keymap.set("n", "<leader>bb", vim.cmd.bprev)
 vim.keymap.set("n", "<leader>bn", vim.cmd.bnext)
 vim.keymap.set("n", "<leader>bd", vim.cmd.bd)
 
@@ -44,5 +44,9 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
 
+vim.keymap.set("n", "<C-,>", "<c-w>5>")
+vim.keymap.set("n", "<C-.>", "<c-w>5<")
+
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+

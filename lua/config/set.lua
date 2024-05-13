@@ -4,6 +4,7 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = false
 
 vim.opt.termguicolors = true
+-- vim.opt.background = "dark"
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
