@@ -2,7 +2,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 vim.keymap.set("n", "<leader>e", function()
   if vim.bo.filetype == "netrw" then
-    vim.cmd "bunload"
+    vim.cmd.Rex()
   else
     vim.cmd.Ex()
   end
